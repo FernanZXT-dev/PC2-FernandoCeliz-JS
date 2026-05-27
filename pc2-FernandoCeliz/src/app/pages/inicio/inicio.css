@@ -29,3 +29,9 @@
 .tarjeta h3 {
   color: #1f4e79;
 }
+.tarjeta img {
+    max-width: 100%;
+    height: auto; 
+    display: block; 
+    border-radius: 8px; 
+}
