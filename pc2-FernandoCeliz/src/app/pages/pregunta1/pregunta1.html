@@ -1,1 +1,42 @@
-<p>pregunta1 works!</p>
+<main class="contenedor">
+  <section class="tarjeta">
+    <h1>Laboratorio Angular - Cálculo de notas</h1>
+    <p class="descripcion">
+      Ingrese cuatro notas, presione Procesar y observe los resultados.
+    </p>
+
+    <div class="formulario">
+      <label>Nota 1</label>
+      <input type="number" [(ngModel)]="n1" min="0" max="20">
+
+      <label>Nota 2</label>
+      <input type="number" [(ngModel)]="n2" min="0" max="20">
+
+      <label>Nota 3</label>
+      <input type="number" [(ngModel)]="n3" min="0" max="20">
+
+      <label>Nota 4</label>
+      <input type="number" [(ngModel)]="n4" min="0" max="20">
+    </div>
+
+    <div class="botones">
+      <button (click)="procesar()">Procesar</button>
+      <button class="secundario" (click)="limpiarFormulario()">Limpiar</button>
+    </div>
+
+    <p class="mensaje">{{ mensaje }}</p>
+  </section>
+
+  <section class="tarjeta resultados">
+    <h2>Resultados</h2>
+
+    <p><strong>Suma:</strong> {{ suma }}</p>
+    <p><strong>Promedio:</strong> {{ promedio | number:'1.2-2' }}</p>
+
+    <p class="estado" [class.excelente]="estado === 'Excelente'" 
+                      [class.regular]="estado === 'Regular'" 
+                      [class.riesgo]="estado === 'Riesgo'">
+      <strong>Estado:</strong> {{ estado }}
+    </p>
+  </section>
+</main>

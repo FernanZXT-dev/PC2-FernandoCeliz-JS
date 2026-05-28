@@ -1,1 +1,36 @@
-<p>pregunta2 works!</p>
+
+<main class="contenedor">
+  <div class="formulario">
+    <input [(ngModel)]="nuevoPersona.nombre" placeholder="Nombre de la persona">
+    <input [(ngModel)]="nuevoPersona.correo" placeholder="correo">
+    <input type="number" [(ngModel)]="nuevoPersona.peso" placeholder="Peso">
+    <input type="number" [(ngModel)]="nuevoPersona.altura" placeholder="Altura">
+    <button (click)="agregar()">Agregar Persona</button>
+    <button (click)="limpiar()">Limpiar Campos</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Persona</th>
+        <th>Correo</th>
+        <th>Peso</th>
+        <th>Altura</th>
+        <th>Imc</th>
+        <th>Estado<th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (p of listaPersona; track p) {
+        <tr>
+          <td>{{ p.nombre }}</td>
+          <td>{{ p.correo }}</td>
+          <td>${{ p.peso }}</td>
+          <td>${{ p.altura }}</td>
+          <td>${{p.imc}</td>
+          <td>${{p.estado}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</main>
